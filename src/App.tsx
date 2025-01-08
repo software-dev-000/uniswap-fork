@@ -8,11 +8,10 @@ import Trade from './Page/Trade.tsx'
 import Explore from './Page/Explore.tsx';
 import Pool from './Page/Pool/Pool.tsx';
 import PoolCreate from './Page/Pool/PoolCreate.tsx';
+import Presale from './Page/Presale.tsx';
 import { arrToken, arrPool } from './Components/Main/TokeData.tsx'
 
-// import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react"
-// import { clusterApiUrl } from "@solana/web3.js";
-import "@solana/wallet-adapter-react-ui/styles.css"
+
 
 const thead_data = [
   {
@@ -109,7 +108,7 @@ export const MainContext = createContext<MainContextProps>({
 
 function App() {
   // const endpoint = web3.clusterApiUrl("devnet")
-  const wallets = useMemo(() => [], [])
+  // const wallets = useMemo(() => [], [])
   const [showModal, setShowModal] = useState(false)
   const [isSellToken, setIsSellToken] = useState(true)
   const [sellToken, setSellToken] = useState({ id: 1, src: "/img/tokens/eth.png", title: "Ethereum", subTitle: "ETH" })
@@ -199,6 +198,7 @@ function App() {
               <Route path='explore' element={<Explore />} />
               <Route path='explore/tokens' element={<Explore />} />
               <Route path='pool' element={<Pool />} />
+              <Route path='presale' element={<Presale />} />
               <Route path='pool/create' element={<PoolCreate />} />
             </Route>
           </Routes>
